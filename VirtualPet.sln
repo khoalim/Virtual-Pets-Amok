@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualPet", "VirtualPet\VirtualPet.csproj", "{2B6A888D-F903-4745-AEEA-5908F814EBBF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualPet.Tests", "VirtualPet.Tests\VirtualPet.Tests.csproj", "{F3567663-BD0F-4F6F-883E-A5E58C902E61}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2B6A888D-F903-4745-AEEA-5908F814EBBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B6A888D-F903-4745-AEEA-5908F814EBBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B6A888D-F903-4745-AEEA-5908F814EBBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3567663-BD0F-4F6F-883E-A5E58C902E61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3567663-BD0F-4F6F-883E-A5E58C902E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3567663-BD0F-4F6F-883E-A5E58C902E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3567663-BD0F-4F6F-883E-A5E58C902E61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
