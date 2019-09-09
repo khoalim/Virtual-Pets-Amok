@@ -6,12 +6,13 @@ namespace VirtualPet
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Type PLAY to enter game of EXIT to leave");
+            Console.WriteLine("Type PLAY to enter game or EXIT to leave");
             string menu = Console.ReadLine().ToLower();
 
             if (menu == "play")
             {
                 Console.WriteLine("Welcome to Virtual Pets Place!");
+                // Console.WriteLine("Would you like a real or robotic pet?");
             }
 
             else if (menu == "exit")
@@ -21,6 +22,7 @@ namespace VirtualPet
             }
 
             
+
 
         }
     }
