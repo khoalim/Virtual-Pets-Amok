@@ -32,15 +32,39 @@ namespace VirtualPet
             if (addPet == "add pet to shelter")
             {
                 Console.WriteLine("What would you like to name your pet?");
-                string petName = Console.ReadLine();
-
-                Console.WriteLine("What species would you like?");
-                string petSpecies = Console.ReadLine();
             }
 
             else
             {
                 Environment.Exit(0);
+            }
+
+            
+            string petName = Console.ReadLine();
+            int hungerLevel;
+            int boredomLevel;
+            int healthLevel;
+
+            Console.WriteLine("What species would you like?");
+            string petSpecies = Console.ReadLine();
+
+            Console.WriteLine("1. View Pet Info");
+            Console.WriteLine("2. View Pet Status");
+            Console.WriteLine("3. Feed Pet");
+            Console.WriteLine("4. Play with Pet");
+            Console.WriteLine("5. Take Pet to Doctor");
+            Console.WriteLine("6. Exit Game");
+            string petMenuChoice = Console.ReadLine().ToLower();
+
+            switch (petMenuChoice)
+            {
+                case "view pet info": Console.WriteLine("Your pet's name is " + petName + " and its species is " + petSpecies);
+                    break;
+
+                case "view pet status": Console.WriteLine("Your pet's hunger level is " + hungerLevel + "," + "its boredome level is " + boredomLevel + "," + "and its health level is " + healthLevel + ".");
+                    break;
+                case "feed pet": Console.WriteLine();
+                    break;
             }
 
 
