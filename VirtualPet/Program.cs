@@ -68,7 +68,7 @@ namespace VirtualPet
                 case "view pet status": Console.WriteLine("Your pet's hunger level is " + hungerLevel + "," + " its boredome level is " + boredomLevel + "," + " and its health level is " + healthLevel + ".");
                     break;
 
-                case "feed pet": Console.WriteLine(petName + "'s" + " hunger level decreased to " + feedPet + " after being fed."); 
+                case "feed pet": Console.WriteLine(virtualPet.Name + "'s" + " hunger level decreased to " + feedPet + " after being fed."); 
                     break;
 
                 case "play with pet": Console.WriteLine();
