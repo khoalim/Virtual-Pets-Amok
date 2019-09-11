@@ -16,29 +16,28 @@ namespace VirtualPet
         public VirtualPet()
         {
             
-            Hunger = 5;
-            Boredom = 5;
-            Health = 5;
+            Hunger = 100;
+            Boredom = 100;
+            Health = 100;
             
-        }
-                       
+        }                   
         
 
         public void GetName(string Name)
         {
             this.Name = Name;
-            Console.WriteLine("Your pet's name is: " + Name);
+            Console.WriteLine();
         }
 
         public void GetSpecies(string Species)
         {
             this.Species = Species;
-            Console.WriteLine("Your pet's species is: " + Species);
+            Console.WriteLine();
         }
 
         public void CheckStatus()
         {
-            Console.WriteLine(Name + "'s" + " stats are: " + "hunger " + Hunger + "," + " boredom " + Boredom + "," + " health " + Health);
+            Console.WriteLine("Your pet's stats are: " + "hunger " + Hunger + "," + " boredom " + Boredom + "," + " health " + Health);
         }
 
         public int FeedPet()

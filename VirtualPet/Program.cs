@@ -49,6 +49,7 @@ namespace VirtualPet
 
                     case "4":
                         Console.WriteLine("View Pet Info");
+                        Console.WriteLine("Your pet's name is " + virtualPet.Name + " and it's species is " + virtualPet.Species + ".");
                         break;
 
                     case "5":
