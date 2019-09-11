@@ -5,12 +5,7 @@ namespace VirtualPet.Tests
 {
     public class UnitTest1
     {
-        [Fact]
-        public void Can_Create_VirtualPet()
-        {
-            new VirtualPet();
-        }
-
+       
         [Fact]
 
         public void Pet_Has_Name()
@@ -86,28 +81,7 @@ namespace VirtualPet.Tests
 
         }
 
-        [Fact]
-
-        public void Can_Feed_Pet()
-        {
-            // Arrange
-            VirtualPet virtualPet = new VirtualPet();
-
-            //Act
-            virtualPet.Hunger = 42;
-            virtualPet.Feed = ();
-            
-
-            //Assert
-            Assert.Equal(42, virtualPet.Feed);
-
-
-
-
-
-
-
-
+        
 
 
         }

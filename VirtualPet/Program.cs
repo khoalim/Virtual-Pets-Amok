@@ -5,83 +5,90 @@ namespace VirtualPet
     class Program
     {
         static void Main(string[] args)
-        {
-            Console.WriteLine("Welcome to Virtual Pets Place!");          
 
-            Console.WriteLine("Type Play or Exit Game");                   
             
-            string playOptions = Console.ReadLine().ToLower();
-
-            if (playOptions == "play")
-            {
-                Console.WriteLine("Menu Options are:");
-                
-            }
-
-            else
-            {
-                Environment.Exit(0);
-
-            }
-
-            Console.WriteLine("1. Add Pet to Shelter");
-            Console.WriteLine("2. Exit Game");
-            string addPet = Console.ReadLine().ToLower();
+        {
             VirtualPet virtualPet = new VirtualPet();
 
-            if (addPet == "add pet to shelter")
+            Console.WriteLine("Welcome to Virtual Pets Place!");
+
+            bool inMenu = true;
+
+            do
             {
-                Console.WriteLine("What would you like to name your pet?");
-                
-                virtualPet.Name = Console.ReadLine();
+                Console.WriteLine("\n1. Add Pet");
+                Console.WriteLine("2. Name Pet");
+                Console.WriteLine("3. Select Pet Species");
+                Console.WriteLine("4. View Pet Info");
+                Console.WriteLine("5. View Pet Status");
+                Console.WriteLine("6. Feed Pet");
+                Console.WriteLine("7. Play with Pet");
+                Console.WriteLine("8. Take Pet to Doctor");
+                Console.WriteLine("9. Exit Game");
+
+                string petMenuChoice = Console.ReadLine();
+
+                switch (petMenuChoice)
+                {
+                    case "1":
+                        Console.WriteLine("You've added a pet to the Shelter");                        
+                        break;
+
+                    case "2":
+                       Console.WriteLine("Give pet name");
+                       string Name = Console.ReadLine();
+                       virtualPet.GetName(Name);
+
+                        break;
+
+                    case "3":
+                        Console.WriteLine("Give pet species");
+                        string Species = Console.ReadLine();
+                        virtualPet.GetSpecies(Species);
+                        break;
+
+                    case "4":
+                        Console.WriteLine("View Pet Info");
+                        break;
+
+                    case "5":
+                        Console.WriteLine("View Pet Status");
+                        virtualPet.CheckStatus();
+                        break;
+
+                    case "6":
+                        Console.WriteLine("Feed Pet");
+                        virtualPet.FeedPet();
+                        break;
+
+                    case "7":
+                        Console.WriteLine("Play with Pet");
+                        virtualPet.PlayPet();
+                        break;
+
+                    case "8":
+                        Console.WriteLine("Take Pet to Doctor");
+                        virtualPet.DoctorPet();
+                        break;
+
+                    case "9":
+                        inMenu = false;
+                        Console.WriteLine("See yah!");
+                        break;
+                }
+                               
             }
 
-            else
-            {
-                Environment.Exit(0);
-            }
-
-            
-            string petName = Console.ReadLine();
-            int hungerLevel = 50;
-            int boredomLevel = 50;
-            int healthLevel = 50;
-            int feedPet = (hungerLevel - 20);
-            int boredomDecrease = (boredomLevel - 20); 
-            
-            Console.WriteLine("What species would you like?");
-            string petSpecies = Console.ReadLine();
-
-            Console.WriteLine("1. View Pet Info");
-            Console.WriteLine("2. View Pet Status");
-            Console.WriteLine("3. Feed Pet");
-            Console.WriteLine("4. Play with Pet");
-            Console.WriteLine("5. Take Pet to Doctor");
-            Console.WriteLine("6. Exit Game");
-            string petMenuChoice = Console.ReadLine().ToLower();
-
-            switch (petMenuChoice)
-            {
-                case "view pet info": Console.WriteLine("Your pet's name is " + virtualPet.Name + " and its species is " + petSpecies);
-                    break;
-
-                case "view pet status": Console.WriteLine("Your pet's hunger level is " + hungerLevel + "," + " its boredome level is " + boredomLevel + "," + " and its health level is " + healthLevel + ".");
-                    break;
-
-                case "feed pet": Console.WriteLine(virtualPet.Name + "'s" + " hunger level decreased to " + feedPet + " after being fed."); 
-                    break;
-
-                case "play with pet": Console.WriteLine();
-                    break;
-
-                case " take pet to doctor": Console.WriteLine();
-                    break;
-
-            }
-
-
-
-           
-        }
+            while (inMenu);
+        }    
     }
 }
+            
+
+
+         
+           
+        
+    
+
+
