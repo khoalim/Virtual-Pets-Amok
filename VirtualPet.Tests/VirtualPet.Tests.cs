@@ -7,7 +7,6 @@ namespace VirtualPet.Tests
     {
        
         [Fact]
-
         public void Pet_Has_Name()
         {
             // Arrange
@@ -22,7 +21,6 @@ namespace VirtualPet.Tests
         }
 
         [Fact]
-
         public void Pet_Has_Species()
         {
             // Arrange
@@ -37,7 +35,6 @@ namespace VirtualPet.Tests
         }
 
         [Fact]
-
         public void Pet_Has_Hunger()
         {
             // Arrange
@@ -52,7 +49,6 @@ namespace VirtualPet.Tests
         }
 
         [Fact]
-
         public void Pet_Has_Boredom()
         {
             // Arrange
@@ -67,7 +63,6 @@ namespace VirtualPet.Tests
         }
 
         [Fact]
-
         public void Pet_Has_Health()
         {
             // Arrange

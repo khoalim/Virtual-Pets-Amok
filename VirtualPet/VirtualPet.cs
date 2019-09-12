@@ -13,6 +13,7 @@ namespace VirtualPet
         public int Boredom { get; set; }
         public int Health { get; set; }
 
+        // These are constructors
         public VirtualPet()
         {
             
@@ -20,18 +21,21 @@ namespace VirtualPet
             Boredom = 100;
             Health = 100;
             
-        }                   
-        
+        }
 
-        public void GetName(string Name)
+        Dictionary<string, string> shelterPets = new Dictionary<string, string>();
+
+        // These are the methods
+
+        public void GetName(string name)
         {
-            this.Name = Name;
+            this.Name = name;
             Console.WriteLine();
         }
 
-        public void GetSpecies(string Species)
+        public void GetSpecies(string species)
         {
-            this.Species = Species;
+            this.Species = species;
             Console.WriteLine();
         }
 
@@ -40,36 +44,37 @@ namespace VirtualPet
             Console.WriteLine("Your pet's stats are: " + "hunger " + Hunger + "," + " boredom " + Boredom + "," + " health " + Health);
         }
 
-        public int FeedPet()
+        public void GetInfo()
+        {
+            Console.WriteLine("Your pet's name is " + Name + " and it's species is " + Species + ".");
+        }
+
+        public void FeedPet()
         {
             Hunger--;
-            return Hunger;
+            //return Hunger;           
         }
         
-        public int DoctorPet()
+        public void DoctorPet()
         {
             
             Health++;
-            return Health;           
+            //return Health;           
         }
 
-        public int PlayPet()
+        public void PlayPet()
         {
             Hunger++;
             Boredom--;
             Health++;
+            // return Hunger + Boredom + Health;
+        }  
 
-            return Hunger + Boredom + Health;
-        }
-           
-
-
-      
-         
-
-
-
-
+         public void DictionaryList()
+        {
+            shelterPets.Add(Name, Species);
+            Console.WriteLine("The pets in your shelter are: " + Name + " the " + Species);
+        }      
     }
 }
 

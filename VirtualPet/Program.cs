@@ -9,13 +9,14 @@ namespace VirtualPet
             
         {
             VirtualPet virtualPet = new VirtualPet();
-
+            
             Console.WriteLine("Welcome to Virtual Pets Place!");
 
             bool inMenu = true;
 
             do
             {
+                Console.WriteLine("\nWhat would you like to do next?");
                 Console.WriteLine("\n1. Add Pet");
                 Console.WriteLine("2. Name Pet");
                 Console.WriteLine("3. Select Pet Species");
@@ -26,55 +27,59 @@ namespace VirtualPet
                 Console.WriteLine("8. Take Pet to Doctor");
                 Console.WriteLine("9. Exit Game");
 
+                Console.WriteLine(); // <---This is here to add some space between the menu and the user's input
+
                 string petMenuChoice = Console.ReadLine();
 
                 switch (petMenuChoice)
                 {
                     case "1":
-                        Console.WriteLine("You've added a pet to the Shelter");                        
+                        Console.WriteLine("\nYou've added a pet to the Shelter!");                        
                         break;
 
                     case "2":
-                       Console.WriteLine("Give pet name");
-                       string Name = Console.ReadLine();
-                       virtualPet.GetName(Name);
+                       Console.WriteLine("\nType your pet's name below:");
+                       string name = Console.ReadLine();
+                       virtualPet.GetName(name);
 
                         break;
 
                     case "3":
-                        Console.WriteLine("Give pet species");
-                        string Species = Console.ReadLine();
-                        virtualPet.GetSpecies(Species);
+                        Console.WriteLine("\nType your pet's species below:");
+                        string species = Console.ReadLine();
+                        virtualPet.GetSpecies(species);
                         break;
 
                     case "4":
-                        Console.WriteLine("View Pet Info");
-                        Console.WriteLine("Your pet's name is " + virtualPet.Name + " and it's species is " + virtualPet.Species + ".");
+                        Console.WriteLine("\nChecking your pet's info....");
+                        virtualPet.GetInfo();
+                        Console.WriteLine();
+                        virtualPet.DictionaryList();
                         break;
 
                     case "5":
-                        Console.WriteLine("View Pet Status");
+                        Console.WriteLine("\nChecking your pet's status...");
                         virtualPet.CheckStatus();
                         break;
 
                     case "6":
-                        Console.WriteLine("Feed Pet");
+                        Console.WriteLine("\nYou've fed your pet!");
                         virtualPet.FeedPet();
                         break;
 
                     case "7":
-                        Console.WriteLine("Play with Pet");
+                        Console.WriteLine("\nThanks for playing with me!");
                         virtualPet.PlayPet();
                         break;
 
                     case "8":
-                        Console.WriteLine("Take Pet to Doctor");
+                        Console.WriteLine("\nThe doctor says your pet is A-Okay!");
                         virtualPet.DoctorPet();
                         break;
 
                     case "9":
                         inMenu = false;
-                        Console.WriteLine("See yah!");
+                        Console.WriteLine("\nSee yah!");
                         break;
                 }
                                
