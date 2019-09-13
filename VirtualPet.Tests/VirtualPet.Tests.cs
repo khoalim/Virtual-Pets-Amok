@@ -27,10 +27,10 @@ namespace VirtualPet.Tests
             VirtualPet virtualPet = new VirtualPet();
 
             //Act
-            virtualPet.Species = "real";
+            virtualPet.Species = "dog";
 
             //Assert
-            Assert.Equal("real", virtualPet.Species);
+            Assert.Equal("dog", virtualPet.Species);
 
         }
 

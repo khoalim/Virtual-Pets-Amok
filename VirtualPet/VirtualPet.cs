@@ -7,25 +7,32 @@ namespace VirtualPet
     public class VirtualPet
     {
         // These are the properties
+        
         public string Name { get; set; }
         public string Species { get; set; }
         public int Hunger { get; set; }
         public int Boredom { get; set; }
         public int Health { get; set; }
 
-        // These are constructors
         public VirtualPet()
         {
-            
-            Hunger = 100;
-            Boredom = 100;
-            Health = 100;
-            
+
         }
 
-        Dictionary<string, string> shelterPets = new Dictionary<string, string>();
 
+        // These are constructors
+        public VirtualPet(string name, string species)
+        {
+            Name = name;
+            Species = species;
+            Hunger = 100;
+            Boredom = 100;
+            Health = 100;            
+        }
+
+        
         // These are the methods
+                
 
         public void GetName(string name)
         {
@@ -46,7 +53,7 @@ namespace VirtualPet
 
         public void GetInfo()
         {
-            Console.WriteLine("Your pet's name is " + Name + " and it's species is " + Species + ".");
+            Console.WriteLine("Hi! My name is " + Name + " and I'm a " + Species + ".");
         }
 
         public void FeedPet()
@@ -58,7 +65,7 @@ namespace VirtualPet
         public void DoctorPet()
         {
             
-            Health++;
+            Health ++;
             //return Health;           
         }
 
@@ -68,14 +75,13 @@ namespace VirtualPet
             Boredom--;
             Health++;
             // return Hunger + Boredom + Health;
-        }  
+        }
 
-         public void DictionaryList()
-        {
-            shelterPets.Add(Name, Species);
-            Console.WriteLine("The pets in your shelter are: " + Name + " the " + Species);
-        }      
+        
+
     }
+
+
 }
 
 

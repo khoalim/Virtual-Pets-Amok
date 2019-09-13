@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace VirtualPet
 {
@@ -10,6 +11,7 @@ namespace VirtualPet
         {
             VirtualPet virtualPet = new VirtualPet();
             
+
             Console.WriteLine("Welcome to Virtual Pets Place!");
 
             bool inMenu = true;
@@ -37,25 +39,26 @@ namespace VirtualPet
                         Console.WriteLine("\nYou've added a pet to the Shelter!");                        
                         break;
 
-                    case "2":
+
+
+                    case "2":                       
                        Console.WriteLine("\nType your pet's name below:");
                        string name = Console.ReadLine();
                        virtualPet.GetName(name);
-
                         break;
 
                     case "3":
                         Console.WriteLine("\nType your pet's species below:");
                         string species = Console.ReadLine();
-                        virtualPet.GetSpecies(species);
+                        virtualPet.GetSpecies(species);                        
                         break;
 
                     case "4":
                         Console.WriteLine("\nChecking your pet's info....");
+                        virtualPet.AddPets();
                         virtualPet.GetInfo();
-                        Console.WriteLine();
-                        virtualPet.DictionaryList();
                         break;
+
 
                     case "5":
                         Console.WriteLine("\nChecking your pet's status...");
