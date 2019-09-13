@@ -14,17 +14,13 @@ namespace VirtualPet
         public int Boredom { get; set; }
         public int Health { get; set; }
 
-        public VirtualPet()
-        {
-
-        }
+        
 
 
         // These are constructors
-        public VirtualPet(string name, string species)
+        public VirtualPet()
         {
-            Name = name;
-            Species = species;
+            
             Hunger = 100;
             Boredom = 100;
             Health = 100;            
@@ -32,6 +28,12 @@ namespace VirtualPet
 
         
         // These are the methods
+
+        public void AddPet(string name, string species)
+        {
+            Name = name;
+            Species = species;
+        }
                 
 
         public void GetName(string name)
@@ -48,7 +50,7 @@ namespace VirtualPet
 
         public void CheckStatus()
         {
-            Console.WriteLine("Your pet's stats are: " + "hunger " + Hunger + "," + " boredom " + Boredom + "," + " health " + Health);
+            Console.WriteLine("Your pet's stats are: " + " hunger " + Hunger + "," + " boredom " + Boredom + "," + " health " + Health);
         }
 
         public void GetInfo()

@@ -10,6 +10,7 @@ namespace VirtualPet
             
         {
             VirtualPet virtualPet = new VirtualPet();
+            Shelter shelter = new Shelter();
             
 
             Console.WriteLine("Welcome to Virtual Pets Place!");
@@ -36,26 +37,26 @@ namespace VirtualPet
                 switch (petMenuChoice)
                 {
                     case "1":
-                        Console.WriteLine("\nYou've added a pet to the Shelter!");                        
-                        break;
-
-
-
-                    case "2":                       
-                       Console.WriteLine("\nType your pet's name below:");
+                                              
+                       Console.WriteLine("\nType your pet's name  below:");
                        string name = Console.ReadLine();
-                       virtualPet.GetName(name);
-                        break;
-
-                    case "3":
+                       //virtualPet.GetName(name);
+                       
                         Console.WriteLine("\nType your pet's species below:");
                         string species = Console.ReadLine();
-                        virtualPet.GetSpecies(species);                        
+                        //virtualPet.GetSpecies(species);
+                        virtualPet.AddPet(name, species);
+
+                        shelter.AddPetToShelter(virtualPet);
+
+
+
+                        Console.WriteLine("\nYou've added a pet to the Shelter!");                        
                         break;
 
                     case "4":
                         Console.WriteLine("\nChecking your pet's info....");
-                        virtualPet.AddPets();
+                        
                         virtualPet.GetInfo();
                         break;
 
