@@ -12,9 +12,53 @@ namespace VirtualPet
 
         public void AddPetToShelter(VirtualPet virtualPet)
         {
-           
+
             ShelterPets.Add(virtualPet);
         }
 
+        public void DisplayInfoList()
+        {
+            foreach (VirtualPet virtualPet in ShelterPets)
+            {
+                virtualPet.GetInfo();
+            }
+
+        }
+
+        public void DisplayStatusList()
+        {
+            foreach (VirtualPet virtualPet in ShelterPets)
+            {
+                virtualPet.CheckStatus();
+            }
+
+        }
+
+        public void FeedAllPets()
+        {
+            foreach (VirtualPet virtualPet in ShelterPets)
+            {
+                virtualPet.FeedPet();
+            }
+
+        }
+
+        public void PlayAllPets()
+        {
+            foreach (VirtualPet virtualPet in ShelterPets)
+            {
+                virtualPet.PlayPet();
+            }
+
+        }
+
+        public void DoctorAllPets()
+        {
+            foreach (VirtualPet virtualPet in ShelterPets)
+            {
+                virtualPet.DoctorPet();
+            }
+
+        }
     }
 }

@@ -36,21 +36,21 @@ namespace VirtualPet
         }
                 
 
-        public void GetName(string name)
+        /*public void GetName(string name)
         {
             this.Name = name;
             Console.WriteLine();
-        }
+        }*/
 
-        public void GetSpecies(string species)
+        /*public void GetSpecies(string species)
         {
             this.Species = species;
             Console.WriteLine();
-        }
+        }*/
 
         public void CheckStatus()
         {
-            Console.WriteLine("Your pet's stats are: " + " hunger " + Hunger + "," + " boredom " + Boredom + "," + " health " + Health);
+            Console.WriteLine(Name + "'s stats are: " + " hunger " + Hunger + "," + " boredom " + Boredom + "," + " health " + Health);
         }
 
         public void GetInfo()
