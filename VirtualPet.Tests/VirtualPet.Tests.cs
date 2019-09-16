@@ -41,10 +41,10 @@ namespace VirtualPet.Tests
             VirtualPet virtualPet = new VirtualPet();
 
             //Act
-            virtualPet.Hunger = 42;
+            virtualPet.Hunger = 100;
 
             //Assert
-            Assert.Equal(42, virtualPet.Hunger);
+            Assert.Equal(100, virtualPet.Hunger);
 
         }
 
@@ -55,10 +55,10 @@ namespace VirtualPet.Tests
             VirtualPet virtualPet = new VirtualPet();
 
             //Act
-            virtualPet.Boredom = 42;
+            virtualPet.Boredom = 100;
 
             //Assert
-            Assert.Equal(42, virtualPet.Boredom);
+            Assert.Equal(100, virtualPet.Boredom);
 
         }
 
@@ -69,15 +69,40 @@ namespace VirtualPet.Tests
             VirtualPet virtualPet = new VirtualPet();
 
             //Act
-            virtualPet.Health = 42;
+            virtualPet.Health = 100;
 
             //Assert
-            Assert.Equal(42, virtualPet.Health);
+            Assert.Equal(100, virtualPet.Health);
 
         }
 
-        
+        [Fact]
+        public void Pet_Can_Feed()
+        {
+            //Arrange
+            VirtualPet virtualPet = new VirtualPet();
 
+            //Act
+            virtualPet.FeedPet();
 
+            //Assert
+            Assert.Equal(99, virtualPet.Hunger);
         }
+
+        [Fact]
+        public void Pet_Can_Doctor()
+        {
+            //Arrange
+            VirtualPet virtualPet = new VirtualPet();
+
+            //Act
+            virtualPet.DoctorPet();
+
+            //Assert
+            Assert.Equal(101, virtualPet.Health);
+        }
+
+
+
+    }
     }
