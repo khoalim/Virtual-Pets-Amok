@@ -19,7 +19,7 @@ namespace VirtualPet
 
             do
             {
-                Console.WriteLine("\nWhat would you like to do next?");
+                Console.WriteLine("\nEnter Number of Menu Option");
                 Console.WriteLine("\n1. Add Pet");
                 Console.WriteLine("2. View Current Pet Info");
                 Console.WriteLine("3. View Current Pet Status");
@@ -43,13 +43,19 @@ namespace VirtualPet
                                               
                        Console.WriteLine("\nType your pet's name  below:");
                        string name = Console.ReadLine();
-                       //virtualPet.GetName(name); We consolidated this line into virtualPet.AddPet method
+                       
                        
                         Console.WriteLine("\nType your pet's species below:");
                         string species = Console.ReadLine();
-                        //virtualPet.GetSpecies(species); We consolidated this line into virtualPet.AddPet method
+                        
+                        
+                        Console.WriteLine("\nEnter A for an organic pet or B for a robotic pet");
+                        string newType = Console.ReadLine().ToLower();
+
                         virtualPet = new VirtualPet();
-                        virtualPet.AddPet(name, species);
+                        VirtualPet organicPets = new OrganicPets();
+                        VirtualPet roboticPets = new RoboticPets();
+                        virtualPet.AddPet(name, species, newType);
 
                         shelter.AddPetToShelter(virtualPet);
 
@@ -58,8 +64,7 @@ namespace VirtualPet
                         break;
 
                     case "2":
-                        Console.WriteLine("\nChecking your pet's info....");
-                        
+                        Console.WriteLine("\nChecking your pet's info....");                        
                         virtualPet.GetInfo();
                         break;
 

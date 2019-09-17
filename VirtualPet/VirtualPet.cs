@@ -13,6 +13,8 @@ namespace VirtualPet
         public int Hunger { get; set; }
         public int Boredom { get; set; }
         public int Health { get; set; }
+        string NewType { get; set; }
+        
 
         
 
@@ -29,25 +31,23 @@ namespace VirtualPet
         
         // These are the methods
 
-        public void AddPet(string name, string species)
+        public void AddPet(string name, string species, string newType)
         {
             Name = name;
             Species = species;
-        }
-                
+            NewType = newType;
 
-        /*public void GetName(string name)
-        {
-            this.Name = name;
-            Console.WriteLine();
-        }*/
+            if (newType == "a")
+            {
+                VirtualPet organicPets = new OrganicPets();
+            }
+            else
+            {
+                VirtualPet roboticPets = new RoboticPets();
+            }
+        }                
 
-        /*public void GetSpecies(string species)
-        {
-            this.Species = species;
-            Console.WriteLine();
-        }*/
-
+        
         public void CheckStatus()
         {
             Console.WriteLine(Name + "'s stats are: " + " hunger " + Hunger + "," + " boredom " + Boredom + "," + " health " + Health);
@@ -55,7 +55,7 @@ namespace VirtualPet
 
         public void GetInfo()
         {
-            Console.WriteLine("Hi! My name is " + Name + " and I'm a " + Species + ".");
+            Console.WriteLine("Hi! My name is " + Name + " and I'm a " + NewType + Species + ".");
         }
 
         public void FeedPet()

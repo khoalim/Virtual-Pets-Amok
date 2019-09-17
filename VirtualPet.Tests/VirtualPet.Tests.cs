@@ -35,7 +35,7 @@ namespace VirtualPet.Tests
         }
 
         [Fact]
-        public void Pet_Has_Hunger()
+        public void Pet_Has_HungerLevel()
         {
             // Arrange
             VirtualPet virtualPet = new VirtualPet();
@@ -49,7 +49,7 @@ namespace VirtualPet.Tests
         }
 
         [Fact]
-        public void Pet_Has_Boredom()
+        public void Pet_Has_BoredomLevel()
         {
             // Arrange
             VirtualPet virtualPet = new VirtualPet();
@@ -63,7 +63,7 @@ namespace VirtualPet.Tests
         }
 
         [Fact]
-        public void Pet_Has_Health()
+        public void Pet_Has_HealthLevel()
         {
             // Arrange
             VirtualPet virtualPet = new VirtualPet();
@@ -77,10 +77,11 @@ namespace VirtualPet.Tests
         }
 
         [Fact]
-        public void Pet_Can_Feed()
+        public void Should_Feed_Pets_And_Decrease_HungerLevel_By_One()
         {
             //Arrange
             VirtualPet virtualPet = new VirtualPet();
+            virtualPet.Hunger = 100;
 
             //Act
             virtualPet.FeedPet();
@@ -90,16 +91,32 @@ namespace VirtualPet.Tests
         }
 
         [Fact]
-        public void Pet_Can_Doctor()
+        public void Should_Doctor_Pets_And_Increase_HealthLevel_By_One()
         {
             //Arrange
             VirtualPet virtualPet = new VirtualPet();
+            virtualPet.Health = 100;
 
             //Act
             virtualPet.DoctorPet();
 
             //Assert
             Assert.Equal(101, virtualPet.Health);
+        }
+
+        [Fact]
+        public void Should_Feed_All_Pets_And_Decrease_Hunger_By_One()
+        {
+            //Arrange
+            VirtualPet virtualPet = new VirtualPet();
+            virtualPet.Health = 100;
+
+
+            //Act
+
+
+            //Assert
+
         }
 
 
