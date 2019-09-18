@@ -62,9 +62,9 @@ namespace VirtualPet
 
         }
 
-        public void RemovePet(int index)
+        public void RemovePet(VirtualPet petChoice)
         {
-            ShelterPets.RemoveAt(index);
+            ShelterPets.Remove(petChoice);
         }
         
     }

@@ -124,8 +124,8 @@ namespace VirtualPet
                         break;
 
                     case "12":
-                        int petIndex = SelectPetMenu(shelter);
-                        shelter.RemovePet(petIndex);                        
+                        VirtualPet petChoice = SelectPetMenu(shelter);
+                        shelter.RemovePet(petChoice);                        
                         break;
 
                         
@@ -140,18 +140,19 @@ namespace VirtualPet
             while (inMenu);
         }
 
-        static int SelectPetMenu(Shelter shelter)
+        static VirtualPet SelectPetMenu(Shelter shelter)
         {
-            Console.WriteLine("\nPlease select a pet to Adopt");
+            Console.WriteLine("\nPlease select a pet:");
             int virtualPetNumber = 1;
             foreach (VirtualPet shelterPet in shelter.ShelterPets)
             {
-                Console.WriteLine(organicPet.Name + "," + organicPet.Species + "," + organicPet.Type);
+                Console.WriteLine($"{virtualPetNumber}. {shelterPet.Name}, {shelterPet.Species}, {shelterPet.Type}");
                 virtualPetNumber++;
             }
             int selectedvirtualPetNumber = Convert.ToInt32(Console.ReadLine());
+                     
 
-            return (selectedvirtualPetNumber - 1);
+            return shelter.ShelterPets[selectedvirtualPetNumber - 1];
         }
 
         
