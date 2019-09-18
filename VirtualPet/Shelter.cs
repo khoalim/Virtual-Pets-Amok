@@ -14,6 +14,7 @@ namespace VirtualPet
         {
 
             ShelterPets.Add(virtualPet);
+
         }
 
         public void DisplayInfoList()
@@ -56,9 +57,18 @@ namespace VirtualPet
         {
             foreach (VirtualPet virtualPet in ShelterPets)
             {
-                virtualPet.DoctorPet();
+                virtualPet.MaintainPet();
             }
 
         }
+
+        public void RemovePet(int index)
+        {
+            ShelterPets.RemoveAt(index);
+        }
+        
     }
 }
+
+    
+

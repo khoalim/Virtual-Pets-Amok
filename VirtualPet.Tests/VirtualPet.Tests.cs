@@ -98,7 +98,7 @@ namespace VirtualPet.Tests
             virtualPet.Health = 100;
 
             //Act
-            virtualPet.DoctorPet();
+            virtualPet.MaintainPet();
 
             //Assert
             Assert.Equal(101, virtualPet.Health);

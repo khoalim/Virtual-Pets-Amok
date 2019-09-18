@@ -13,7 +13,7 @@ namespace VirtualPet
         public int Hunger { get; set; }
         public int Boredom { get; set; }
         public int Health { get; set; }
-        string NewType { get; set; }
+        public string Type { get; set; }
         
 
         
@@ -22,60 +22,54 @@ namespace VirtualPet
         // These are constructors
         public VirtualPet()
         {
-            
-            Hunger = 100;
-            Boredom = 100;
-            Health = 100;            
+           
+            Boredom = 100;                        
         }
 
         
         // These are the methods
 
-        public void AddPet(string name, string species, string newType)
+        public void AddPet(string name, string species)
         {
-            Name = name;
-            Species = species;
-            NewType = newType;
+           Name = name;
+           Species = species;
+          
 
-            if (newType == "a")
-            {
-                VirtualPet organicPets = new OrganicPets();
-            }
-            else
-            {
-                VirtualPet roboticPets = new RoboticPets();
-            }
+            
         }                
 
         
-        public void CheckStatus()
+        public virtual void CheckStatus()
+                    
+          {
+             Console.WriteLine(Name + "'s stats are: " + " hunger " + Hunger + "," + " boredom " + Boredom + "," + " health " + Health);
+          }  
+                
+                          
+        
+
+        public virtual void GetInfo()
         {
-            Console.WriteLine(Name + "'s stats are: " + " hunger " + Hunger + "," + " boredom " + Boredom + "," + " health " + Health);
+            Console.WriteLine("Hi! My name is " + Name + " and I'm a/an " + Type + " " + Species + ".");
         }
 
-        public void GetInfo()
+        public virtual void FeedPet()
         {
-            Console.WriteLine("Hi! My name is " + Name + " and I'm a " + NewType + Species + ".");
-        }
-
-        public void FeedPet()
-        {
-            Hunger--;
-            //return Hunger;           
+            Hunger--;                     
         }
         
-        public void DoctorPet()
+        public virtual void MaintainPet()
         {
-            
-            Health ++;
-            //return Health;           
+           
+            Health ++;                     
         }
 
-        public void PlayPet()
+        public virtual void PlayPet()
         {
             Hunger++;
             Boredom--;
             Health++;
+            
             // return Hunger + Boredom + Health;
         }
 

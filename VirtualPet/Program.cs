@@ -11,6 +11,7 @@ namespace VirtualPet
         {
             VirtualPet virtualPet = new VirtualPet();
             Shelter shelter = new Shelter();
+
             
 
             Console.WriteLine("Welcome to Virtual Pets Place!");
@@ -30,17 +31,19 @@ namespace VirtualPet
                 Console.WriteLine("8. View Status of All Shelter Pets");
                 Console.WriteLine("9. Feed All Pets");
                 Console.WriteLine("10. Play with All Pets");
-                Console.WriteLine("11. Take All Pets to Doctor");
-                Console.WriteLine("12. Exit Game");
+                Console.WriteLine("11. Maintain All Pets");
+                Console.WriteLine("12. Adopt a Pet");
+                Console.WriteLine("13. Exit Game");
 
                 Console.WriteLine(); // <---This is here to add some space between the menu and the user's input
 
                 string petMenuChoice = Console.ReadLine();
+                
 
                 switch (petMenuChoice)
                 {
+                    
                     case "1":
-                                              
                        Console.WriteLine("\nType your pet's name  below:");
                        string name = Console.ReadLine();
                        
@@ -50,16 +53,22 @@ namespace VirtualPet
                         
                         
                         Console.WriteLine("\nEnter A for an organic pet or B for a robotic pet");
-                        string newType = Console.ReadLine().ToLower();
+                        string petType = Console.ReadLine().ToLower();
 
-                        virtualPet = new VirtualPet();
-                        VirtualPet organicPets = new OrganicPets();
-                        VirtualPet roboticPets = new RoboticPets();
-                        virtualPet.AddPet(name, species, newType);
+                        if (petType == "a")
+                        {
+                            VirtualPet organicPet = new OrganicPets();
+                            organicPet.AddPet(name, species);
+                            shelter.AddPetToShelter(organicPet);
 
-                        shelter.AddPetToShelter(virtualPet);
+                        }
+                        else
+                        {
+                            VirtualPet roboticPet = new RoboticPets();
+                            roboticPet.AddPet(name, species);
+                            shelter.AddPetToShelter(roboticPet);
 
-                        
+                        }                                                
                         Console.WriteLine("\nYou've added a pet to the Shelter!");                        
                         break;
 
@@ -85,8 +94,8 @@ namespace VirtualPet
                         break;
 
                     case "6":
-                        Console.WriteLine("\nThe doctor says your pet is A-Okay!");
-                        virtualPet.DoctorPet();
+                        Console.WriteLine("\nYour pet's maintenance is A-Okay!");
+                        virtualPet.MaintainPet();
                         break;
 
                     case "7":
@@ -102,7 +111,7 @@ namespace VirtualPet
                     case "9":
                         Console.WriteLine("\nYou've fed all your pets!");
                         shelter.FeedAllPets();
-                        break;
+                        break;                    
 
                     case "10":
                         Console.WriteLine("\nThanks for playing with all your pets!");
@@ -112,9 +121,15 @@ namespace VirtualPet
                     case "11":
                         Console.WriteLine("\n The doctor says all your pets are A-Okay!");
                         shelter.DoctorAllPets();
-                        break;                 
+                        break;
 
                     case "12":
+                        int petIndex = SelectPetMenu(shelter);
+                        shelter.RemovePet(petIndex);                        
+                        break;
+
+                        
+                    case "13":
                         inMenu = false;
                         Console.WriteLine("\nSee yah!");
                         break;
@@ -123,7 +138,23 @@ namespace VirtualPet
             }
 
             while (inMenu);
-        }    
+        }
+
+        static int SelectPetMenu(Shelter shelter)
+        {
+            Console.WriteLine("\nPlease select a pet to Adopt");
+            int virtualPetNumber = 1;
+            foreach (VirtualPet shelterPet in shelter.ShelterPets)
+            {
+                Console.WriteLine(organicPet.Name + "," + organicPet.Species + "," + organicPet.Type);
+                virtualPetNumber++;
+            }
+            int selectedvirtualPetNumber = Convert.ToInt32(Console.ReadLine());
+
+            return (selectedvirtualPetNumber - 1);
+        }
+
+        
     }
 }
             

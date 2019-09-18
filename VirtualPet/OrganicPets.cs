@@ -7,9 +7,23 @@ namespace VirtualPet
     class OrganicPets : VirtualPet
 
     {
-        public OrganicPets()
+        public OrganicPets() :base()
         {
+            Hunger = 100;
+            Health = 100;
+            Type = "organic";
+        }
 
+
+
+        public override void GetInfo()
+        {
+            Console.WriteLine("Hi! My name is " + Name + " and I'm a/an " + Type + " " + Species + ".");
+        }
+
+        public override void CheckStatus()
+        {
+            Console.WriteLine(Name + "'s stats are: " + " hunger " + Hunger + "," + " boredom " + Boredom + "," + " health " + Health);
         }
     }
 }
