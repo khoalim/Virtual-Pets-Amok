@@ -4,11 +4,18 @@ using System.Text;
 
 namespace VirtualPet
 {
-    public class Shelter
+    public class Shelter 
     {
         public List<VirtualPet> ShelterPets = new List<VirtualPet>();
 
 
+
+        //public void AddPet(string name, string species)
+        //{
+        //    Name = name;
+        //    Species = species;
+
+        //}
 
         public void AddPetToShelter(VirtualPet virtualPet)
         {
@@ -66,6 +73,8 @@ namespace VirtualPet
         {
             ShelterPets.Remove(petChoice);
         }
+
+
         
     }
 }

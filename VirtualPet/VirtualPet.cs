@@ -22,23 +22,21 @@ namespace VirtualPet
         // These are constructors
         public VirtualPet()
         {
-           
-            Boredom = 100;                        
+
+            Boredom = 100;
         }
 
-        
+
         // These are the methods
 
         public void AddPet(string name, string species)
         {
-           Name = name;
-           Species = species;
-          
+            Name = name;
+            Species = species;
 
-            
-        }                
+        }
 
-        
+
         public virtual void CheckStatus()
                     
           {

@@ -22,18 +22,16 @@ namespace VirtualPet
             {
                 Console.WriteLine("\nEnter Number of Menu Option");
                 Console.WriteLine("\n1. Add Pet");
-                Console.WriteLine("2. View Current Pet Info");
-                Console.WriteLine("3. View Current Pet Status");
-                Console.WriteLine("4. Feed Pet");
-                Console.WriteLine("5. Play with Pet");
-                Console.WriteLine("6. Take Pet to Doctor");
-                Console.WriteLine("7. View Info of All Shelter Pets");
-                Console.WriteLine("8. View Status of All Shelter Pets");
-                Console.WriteLine("9. Feed All Pets");
-                Console.WriteLine("10. Play with All Pets");
-                Console.WriteLine("11. Maintain All Pets");
-                Console.WriteLine("12. Adopt a Pet");
-                Console.WriteLine("13. Exit Game");
+                Console.WriteLine("2. Feed Pet");
+                Console.WriteLine("3. Play with Pet");
+                Console.WriteLine("4. Take Pet to Doctor");
+                Console.WriteLine("5. View Info of All Shelter Pets");
+                Console.WriteLine("6. View Status of All Shelter Pets");
+                Console.WriteLine("7. Feed All Pets");
+                Console.WriteLine("8. Play with All Pets");
+                Console.WriteLine("9. Maintain All Pets");
+                Console.WriteLine("10. Adopt a Pet");
+                Console.WriteLine("11. Exit Game");
 
                 Console.WriteLine(); // <---This is here to add some space between the menu and the user's input
 
@@ -72,64 +70,60 @@ namespace VirtualPet
                         Console.WriteLine("\nYou've added a pet to the Shelter!");                        
                         break;
 
+                    
+
                     case "2":
-                        Console.WriteLine("\nChecking your pet's info....");                        
-                        virtualPet.GetInfo();
-                        break;
-
-
-                    case "3":
-                        Console.WriteLine("\nChecking your pet's status...");
-                        virtualPet.CheckStatus();
-                        break;
-
-                    case "4":
                         Console.WriteLine("\nYou've fed your pet!");
+                        virtualPet = SelectPetMenu(shelter);
                         virtualPet.FeedPet();
                         break;
 
-                    case "5":
+                    case "3":
                         Console.WriteLine("\nThanks for playing with me!");
+                        virtualPet  = SelectPetMenu(shelter);
                         virtualPet.PlayPet();
                         break;
 
-                    case "6":
+                    case "4":
                         Console.WriteLine("\nYour pet's maintenance is A-Okay!");
+                        virtualPet = SelectPetMenu(shelter);
                         virtualPet.MaintainPet();
                         break;
 
-                    case "7":
+                    case "5":
                         Console.WriteLine("\nChecking all pets info...");
+
+                        //VirtualPet petChoiceInfo = SelectPetMenu(shelter);
                         shelter.DisplayInfoList();
                         break;
 
-                    case "8":
+                    case "6":
                         Console.WriteLine("\nChecking all pets status...");
                         shelter.DisplayStatusList();
                         break;
 
-                    case "9":
+                    case "7":
                         Console.WriteLine("\nYou've fed all your pets!");
                         shelter.FeedAllPets();
                         break;                    
 
-                    case "10":
+                    case "8":
                         Console.WriteLine("\nThanks for playing with all your pets!");
                         shelter.PlayAllPets();
                         break;
 
-                    case "11":
+                    case "9":
                         Console.WriteLine("\n The doctor says all your pets are A-Okay!");
                         shelter.DoctorAllPets();
                         break;
 
-                    case "12":
+                    case "10":
                         VirtualPet petChoice = SelectPetMenu(shelter);
                         shelter.RemovePet(petChoice);                        
                         break;
 
                         
-                    case "13":
+                    case "11":
                         inMenu = false;
                         Console.WriteLine("\nSee yah!");
                         break;

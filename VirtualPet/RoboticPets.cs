@@ -46,5 +46,13 @@ namespace VirtualPet
             Console.WriteLine(Name + "'s stats are: " + " oil " + Oil + "," + " boredom " + Boredom + "," + " performance " + Performance);
         }
 
+        //public override void AddPet(string name, string species)
+        //{
+        //    base.AddPet(name, species);
+        //    Name = name;
+        //    Species = species;
+
+        //}
+
     }
 }
