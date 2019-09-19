@@ -73,20 +73,23 @@ namespace VirtualPet
                     
 
                     case "2":
-                        Console.WriteLine("\nYou've fed your pet!");
+                        
                         virtualPet = SelectPetMenu(shelter);
+                        Console.WriteLine("\nYou've fed your pet!");
                         virtualPet.FeedPet();
                         break;
 
                     case "3":
-                        Console.WriteLine("\nThanks for playing with me!");
+                        
                         virtualPet  = SelectPetMenu(shelter);
+                        Console.WriteLine("\nThanks for playing with me!");
                         virtualPet.PlayPet();
                         break;
 
                     case "4":
-                        Console.WriteLine("\nYour pet's maintenance is A-Okay!");
+                        
                         virtualPet = SelectPetMenu(shelter);
+                        Console.WriteLine("\nYour pet's maintenance is A-Okay!");
                         virtualPet.MaintainPet();
                         break;
 
